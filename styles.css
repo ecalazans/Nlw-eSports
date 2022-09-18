@@ -1,0 +1,196 @@
+/*Reset CSS padrão*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Removendo estilo da lista*/
+ul {
+    list-style: none;
+}
+
+/*Corpo - Fundo de tela*/
+body {
+    background-image: url(./assets/bg.jpg); /*pegando imagem*/
+    background-position: top center; /*(imagem) - ficar no topo e centralizado*/
+    background-size: 100% auto; /*(imagem) - 100% de largura e altura atomatica*/
+    background-repeat: no-repeat; /*(imagem) - não repetir imagem de fundo*/
+    background-color: #121214; /*(tela) - cor de fundo*/
+}
+
+/*Formato da fonte no corpo da página*/
+body * {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+}
+
+/*Centralizando a img com text-align: center | A tag img tem propriedade de texto,
+ por isso o text-align funciona*/
+header {
+    margin-top: 32px;
+    height: calc(120px + 32px);
+    /* text-align: center; */
+}
+
+/*Definido largura da div/caixa, que contem a img*/
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2DA5C 100%);
+
+    border-radius: 50%;
+
+    display: flex;
+    padding: 4px;
+
+    /*Controlando o tempo da transição hover*/
+    transition: transform .3s;
+}
+
+/*Definindo transição ao passar o mouse sobre a img*/
+header div:hover {
+    transform: scale(1.1);
+}
+
+/*Definindo a largura e borda da img*/
+header div img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+/*Mapear as margens para entender as mudanças aplicadas*/
+/* main * {
+    border: 1px solid red;
+} */
+
+/*Limites de largura/margem da estrutura main*/
+main {
+    max-width: 580px;
+    width: 90%;
+    margin: 32px auto;
+
+    display: grid;
+    gap: 24px;
+}
+
+/*Configurando a section para conseguir adicionar a borda colorida*/
+section {
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2DA5C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+
+    /*espaço(top) entre as section*/
+    margin-top: 32px;
+}
+
+/*Adicionando cor na section div*/
+section div {
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+}
+
+/*Configurando a cor da section*/
+section {
+    color: white;
+}
+
+/*Configurando o espaçamento das letras na section*/
+section h2 {
+    letter-spacing: -0.47px;
+}
+
+/*Configurando o espaçamento das letras na section*/
+section p {
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+/*Configurando a ul.. de: display: block para
+ display: flex(permite que você arranje os elementos filhos(li) horizontal ou verticalmente)*/
+section ul {
+    /*Permite um elemento ficar ao lado do outro*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    margin-top: 24px;
+}
+
+/*Controlando transição hover*/
+section ul li {
+    transition: transform .3s;
+}
+
+/*Definindo transição ao passar o mouse sobre os elementos li*/
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+/*Definindo o tamanho/estilo das imagens games-list*/
+.games-list img {
+    width: 90px;
+    border-radius: 8px;
+    /* border: 1px solid #443E54; */
+}
+
+/*Definindo o tamanho/estilo das imagens channel-list*/
+.channel-list img {
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443E54;
+}
+
+/*Animation*/
+
+/*Definindo a animação na header div*/
+header div {
+    animation: fromTop .7s .2s backwards;
+}
+
+/*Definindo a animação na section*/
+main section {
+    animation: fromBottom .7s backwards;
+}
+
+/*Definindo a animação no filho nº 1 da section*/
+main section:nth-child(1) {
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: .3s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .6s;
+}
+
+/*Configurando o comportamento da animação (de(cima)... para(baixo))*/
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Configurando o comportamento da animação (de(baixo)... para(cima))*/
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
